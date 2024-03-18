@@ -112,11 +112,41 @@ const updateTitle = async (req, res) => {
 
     res.status(200).json({
       ok: true,
-      message: "Book' title update",
+      message: "Book's title update",
       data: bookUpdate,
     });
   } catch (error) {
     console.log("Error updating books's name", error);
+    res.status(500).json({
+      ok: false,
+      message: "Error Internal Server",
+      data: null,
+    });
+  }
+};
+
+const deleteBookByTitle = async (req, res) => {
+  try {
+    const { title } = req.params;
+    const bookFound = await Book.findOne({ title: title });
+
+    if (!bookFound) {
+      return res.status(404).json({
+        ok: false,
+        message: "Book not found",
+        data: null,
+      });
+    }
+
+    await bookFound.deleteOne();
+
+    res.status(200).json({
+      ok: true,
+      message: "Book deleted",
+      data: bookFound,
+    });
+  } catch (error) {
+    console.error("Error deleting book by title", error);
     res.status(500).json({
       ok: false,
       message: "Error Internal Server",
@@ -130,4 +160,5 @@ module.exports = {
   getAllBooks,
   getBookByReferenceNumber,
   updateTitle,
+  deleteBookByTitle,
 };
