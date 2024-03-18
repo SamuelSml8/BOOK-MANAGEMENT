@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>METHOD POST</title>
+  </head>
+  <body>
+    <form action="http://localhost:3001/api/books/create" method="post">
+      <label> Reference Number</label>
+      <input type="number" name="referenceNumber" />
+
+      <label>Title</label>
+      <input type="text" name="title" />
+
+      <label>Author</label>
+      <input type="text" name="author" />
+
+      <label>Genre</label>
+      <input type="text" name="genre" />
+
+      <label>Description</label>
+      <input type="text" name="description" />
+
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>

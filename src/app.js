@@ -7,9 +7,9 @@ const port = 3001;
 
 connectDB();
 
-app.use(express.json())
+app.use(express.json());
 
-app.use("/api/books",routes)
+app.use("/api/books", routes);
 
 app.listen(port, () => {
   console.log(`Server on port ${port}\nhttp://localhost:${port}`);
