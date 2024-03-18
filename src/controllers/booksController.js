@@ -19,6 +19,17 @@ const createBook = async (req, res) => {
       });
     }
 
+    const bookExistent = await Book.findOne({
+      referenceNumber: newBook.referenceNumber,
+    });
+    if (bookExistent) {
+      return res.status(409).json({
+        ok: false,
+        message: "Book already exist",
+        data: null,
+      });
+    }
+
     const saveBook = await newBook.save();
     return res.status(201).json({
       ok: true,
