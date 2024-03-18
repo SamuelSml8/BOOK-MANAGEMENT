@@ -5,7 +5,7 @@ Taller 2
 
 Crear un servicio de gestión de libros, que permita:
 
-Crear libros OK! (AGREGAR VALIDACIÓN PARA NO PERMITIR CREAR UN LIBRO SI YA EXISTE UN NUMERO DE REFERENCIA)
+Crear libros OK!
 Obtener la lista de todos los libros.
 Consultar un libro por su # de referencia.
 Actualizar el nombre de un libro

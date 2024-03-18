@@ -46,4 +46,23 @@ const createBook = async (req, res) => {
   }
 };
 
-module.exports = { createBook };
+const getAllBooks = async (req, res) => {
+  try {
+    const books = await Book.find();
+
+    res.status(200).json({
+      ok: true,
+      message: "All books",
+      data: books,
+    });
+  } catch (error) {
+    console.log("Error getting all books", error);
+    res.status(500).json({
+      ok: false,
+      message: "Error Internal Server",
+      data: null,
+    });
+  }
+};
+
+module.exports = { createBook, getAllBooks };
