@@ -7,7 +7,7 @@ Crear un servicio de gestión de libros, que permita:
 
 Crear libros OK!
 Obtener la lista de todos los libros. OK!
-Consultar un libro por su # de referencia. 
+Consultar un libro por su # de referencia. OK!
 Actualizar el nombre de un libro
 Borrar un libro por su nombre
 

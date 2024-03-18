@@ -83,7 +83,6 @@ const getBookByReferenceNumber = async (req, res) => {
       message: "Book found",
       data: bookFound,
     });
-
   } catch (error) {
     console.log("Error getting book by reference number", error);
     res.status(500).json({
@@ -94,4 +93,41 @@ const getBookByReferenceNumber = async (req, res) => {
   }
 };
 
-module.exports = { createBook, getAllBooks, getBookByReferenceNumber };
+const updateTitle = async (req, res) => {
+  try {
+    const { title } = req.params;
+    const bookUpdate = await Book.findOneAndUpdate(
+      { title: title },
+      { $set: { title: "Test patch" } },
+      { new: true }
+    );
+
+    if (!bookUpdate) {
+      return res.status(404).json({
+        ok: false,
+        message: "Book not found",
+        data: null,
+      });
+    }
+
+    res.status(200).json({
+      ok: true,
+      message: "Book' title update",
+      data: bookUpdate,
+    });
+  } catch (error) {
+    console.log("Error updating books's name", error);
+    res.status(500).json({
+      ok: false,
+      message: "Error Internal Server",
+      data: null,
+    });
+  }
+};
+
+module.exports = {
+  createBook,
+  getAllBooks,
+  getBookByReferenceNumber,
+  updateTitle,
+};
