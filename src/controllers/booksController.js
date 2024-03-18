@@ -65,4 +65,33 @@ const getAllBooks = async (req, res) => {
   }
 };
 
-module.exports = { createBook, getAllBooks };
+const getBookByReferenceNumber = async (req, res) => {
+  try {
+    const { referenceNumber } = req.params;
+    const bookFound = await Book.findOne({ referenceNumber: referenceNumber });
+
+    if (!bookFound) {
+      return res.status(404).json({
+        ok: false,
+        message: "Book not found",
+        data: null,
+      });
+    }
+
+    res.status(200).json({
+      ok: true,
+      message: "Book found",
+      data: bookFound,
+    });
+
+  } catch (error) {
+    console.log("Error getting book by reference number", error);
+    res.status(500).json({
+      ok: false,
+      message: "Error Internal Server",
+      data: null,
+    });
+  }
+};
+
+module.exports = { createBook, getAllBooks, getBookByReferenceNumber };

@@ -6,8 +6,8 @@ Taller 2
 Crear un servicio de gestión de libros, que permita:
 
 Crear libros OK!
-Obtener la lista de todos los libros.
-Consultar un libro por su # de referencia.
+Obtener la lista de todos los libros. OK!
+Consultar un libro por su # de referencia. 
 Actualizar el nombre de un libro
 Borrar un libro por su nombre
 
