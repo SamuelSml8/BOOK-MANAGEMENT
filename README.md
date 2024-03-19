@@ -18,6 +18,7 @@ La estructura de la aplicación debe aplicar buenas prácticas separando respons
 
 #  ESTRUCTURA
 Responsabilidades divididas en diferentes carpetas:
+
 ![image](https://github.com/SamuelSml8/BOOK-MANAGEMENT/assets/127326262/e0b3384e-bc27-47a8-9579-ea7322d8497e)
 
 # SOLUCIÓN
