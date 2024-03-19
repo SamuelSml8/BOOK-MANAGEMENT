@@ -8,6 +8,7 @@ const port = 3001;
 connectDB();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/books", routes);
 
