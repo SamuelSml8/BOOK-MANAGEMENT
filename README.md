@@ -16,12 +16,14 @@ Para la creación de libros debe ser creado un formulario que permita introducir
 Los libros deben ser de literatura en inglés.
 La estructura de la aplicación debe aplicar buenas prácticas separando responsabilidades.
 
+# SOLUCIÓN
+Actividad solucionada con las mejores prácticas de programación. En el controlador se incluyen validaciones básicas y generales, 
+tales cómo no permitir que un libro sea creado si un campo está vacío, tampoco permitir la creación de un libro si el número de 
+referencia ya existe.
+
 #  ESTRUCTURA
 Responsabilidades divididas en diferentes carpetas:
 
 ![image](https://github.com/SamuelSml8/BOOK-MANAGEMENT/assets/127326262/e0b3384e-bc27-47a8-9579-ea7322d8497e)
 
-# SOLUCIÓN
-Actividad solucionada con las mejores prácticas de programación. En el controlador se incluyen validaciones básicas y generales, 
-tales cómo no permitir que un libro sea creado si un campo está vacío, tampoco permitir la creación de un libro si el número de 
-referencia ya existe.
+
